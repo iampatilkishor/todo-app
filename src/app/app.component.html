@@ -12,18 +12,12 @@
 
     <div id="todo-table" class="todoform">
       <input [ngClass]="{'error': !validTodo}" type="text" #inputToDo name="item" (keydown)="newToDoChange($event)" value="{{newToDo}}" placeholder="Add new item..." required />
-      <button class="btn addbtn" (click)="addToDo(inputToDo.value)" type="submit">Add Item</button>
+      <button class="btn addbtn" (click)="addToDo(inputToDo.value)" type="submit">ADD TASK</button>
     </div>
 
     <div class="todo text-center" *ngFor="let todo of todoList; index as todoIndex;">
-      <div class="todohead">
-        <span class="float-right actionbar" (click)="removeToDo(todo,todoIndex)">
-          <i class="fa fa-trash"></i>
-        </span>
-      </div>
-      <div class="todobody text-center">
-        <p>{{ todo.title }}</p>
-      </div>
+      <app-todo [toDo]="todo"  index="{{todoIndex}}" (removeToDo)="removeToDo({todo:todo,todoIndex:todoIndex})">
+      </app-todo>
     </div>
   </div>
 </div>

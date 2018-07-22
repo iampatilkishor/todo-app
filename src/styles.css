@@ -45,13 +45,20 @@ body {
   box-shadow: 10px 10px 10px 6px;
 }
 
-.todohead{
-  height: 30px;
-}
-
 .actionbar{
   padding: 5px 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
+
+.countIndicator{
+  padding: 5px 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 .todobody{
   height: 100%;
   width: 100%;
